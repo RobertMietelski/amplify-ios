@@ -39,6 +39,6 @@ public protocol DataStoreBaseBehavior {
 public protocol DataStoreSubscribeBehavior {
     /// Returns a Publisher for model changes (create, updates, delete)
     /// - Parameter modelType: The model type to observe
-    @available(iOS 13.0, *)
+    @available(tvOS 13.0, *)
     func publisher<M: Model>(for modelType: M.Type) -> AnyPublisher<MutationEvent, DataStoreError>
 }

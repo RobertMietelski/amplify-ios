@@ -58,7 +58,7 @@ class MockDataStoreCategoryPlugin: MessageReporter, DataStoreCategoryPlugin {
         notify("clear")
     }
 
-    @available(iOS 13.0, *)
+    @available(tvOS 13.0, *)
     func publisher<M: Model>(for modelType: M.Type)
         -> AnyPublisher<MutationEvent, DataStoreError> {
             let mutationEvent = MutationEvent(id: "testevent",

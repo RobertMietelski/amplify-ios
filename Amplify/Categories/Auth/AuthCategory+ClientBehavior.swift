@@ -48,25 +48,6 @@ extension AuthCategory: AuthCategoryBehavior {
                              listener: listener)
     }
 
-    public func signInWithWebUI(presentationAnchor: AuthUIPresentationAnchor,
-                                options: AuthWebUISignInOperation.Request.Options? = nil,
-                                listener: AuthWebUISignInOperation.ResultListener?) -> AuthWebUISignInOperation {
-        return plugin.signInWithWebUI(presentationAnchor: presentationAnchor,
-                                      options: options,
-                                      listener: listener)
-    }
-
-    public func signInWithWebUI(for authProvider: AuthProvider,
-                                presentationAnchor: AuthUIPresentationAnchor,
-                                options: AuthSocialWebUISignInOperation.Request.Options? = nil,
-                                listener: AuthSocialWebUISignInOperation.ResultListener?)
-        -> AuthSocialWebUISignInOperation {
-            return plugin.signInWithWebUI(for: authProvider,
-                                          presentationAnchor: presentationAnchor,
-                                          options: options,
-                                          listener: listener)
-    }
-
     public func confirmSignIn(challengeResponse: String,
                               options: AuthConfirmSignInOperation.Request.Options? = nil,
                               listener: AuthConfirmSignInOperation.ResultListener?) -> AuthConfirmSignInOperation {

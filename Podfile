@@ -1,4 +1,4 @@
-platform :ios, "11.0"
+platform :tvos, "12.0"
 
 AWS_SDK_VERSION = "2.13.0"
 

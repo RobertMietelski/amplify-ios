@@ -8,7 +8,7 @@
 import Combine
 
 extension DataStoreCategory: DataStoreSubscribeBehavior {
-    @available(iOS 13.0, *)
+    @available(tvOS 13.0, *)
     public func publisher<M: Model>(for modelType: M.Type) -> AnyPublisher<MutationEvent, DataStoreError> {
         return plugin.publisher(for: modelType)
     }

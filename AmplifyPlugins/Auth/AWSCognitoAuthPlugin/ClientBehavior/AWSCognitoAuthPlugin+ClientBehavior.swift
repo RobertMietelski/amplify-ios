@@ -65,36 +65,6 @@ extension AWSCognitoAuthPlugin {
         return signInOperation
     }
 
-    public func signInWithWebUI(presentationAnchor: AuthUIPresentationAnchor,
-                                options: AuthWebUISignInOperation.Request.Options?,
-                                listener: AuthWebUISignInOperation.ResultListener?) -> AuthWebUISignInOperation {
-        let options = options ?? AuthWebUISignInRequest.Options()
-        let request = AuthWebUISignInRequest(presentationAnchor: presentationAnchor,
-                                             options: options)
-        let signInWithWebUIOperation = AWSAuthWebUISignInOperation(request,
-                                                                   authenticationProvider: authenticationProvider,
-                                                                   resultListener: listener)
-        queue.addOperation(signInWithWebUIOperation)
-        return signInWithWebUIOperation
-    }
-
-    public func signInWithWebUI(for authProvider: AuthProvider,
-                                presentationAnchor: AuthUIPresentationAnchor,
-                                options: AuthSocialWebUISignInOperation.Request.Options?,
-                                listener: AuthSocialWebUISignInOperation.ResultListener?)
-        -> AuthSocialWebUISignInOperation {
-            let options = options ?? AuthWebUISignInRequest.Options()
-            let request = AuthWebUISignInRequest(presentationAnchor: presentationAnchor,
-                                                 authProvider: authProvider,
-                                                 options: options)
-            let signInWithWebUIOperation = AWSAuthSocialWebUISignInOperation(
-                request,
-                authenticationProvider: authenticationProvider,
-                resultListener: listener)
-            queue.addOperation(signInWithWebUIOperation)
-            return signInWithWebUIOperation
-    }
-
     public func confirmSignIn(challengeResponse: String,
                               options: AuthConfirmSignInOperation.Request.Options? = nil,
                               listener: AuthConfirmSignInOperation.ResultListener?) -> AuthConfirmSignInOperation {

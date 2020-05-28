@@ -8,12 +8,12 @@
 import Foundation
 import Combine
 extension AmplifyAPICategory: APICategoryReachabilityBehavior {
-    @available(iOS 13.0, *)
+    @available(tvOS 13.0, *)
     public func reachabilityPublisher(for apiName: String?) throws -> AnyPublisher<ReachabilityUpdate, Never>? {
         return try plugin.reachabilityPublisher(for: apiName)
     }
 
-    @available(iOS 13.0, *)
+    @available(tvOS 13.0, *)
     public func reachabilityPublisher() throws -> AnyPublisher<ReachabilityUpdate, Never>? {
         return try plugin.reachabilityPublisher(for: nil)
     }

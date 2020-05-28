@@ -48,20 +48,6 @@ class AuthHubEventHandler: AuthHubEventBehavior {
                 }
                 self?.handleSignInEvent(result)
 
-            case HubPayload.EventName.Auth.webUISignInAPI:
-                guard let event = payload.data as? AWSAuthWebUISignInOperation.OperationResult,
-                    case let .success(result) = event else {
-                        return
-                }
-                self?.handleSignInEvent(result)
-
-            case HubPayload.EventName.Auth.socialWebUISignInAPI:
-                guard let event = payload.data as? AWSAuthSocialWebUISignInOperation.OperationResult,
-                    case let .success(result) = event else {
-                        return
-                }
-                self?.handleSignInEvent(result)
-
             case HubPayload.EventName.Auth.signOutAPI:
                 guard let event = payload.data as? AWSAuthSignOutOperation.OperationResult,
                     case .success(_) = event else {

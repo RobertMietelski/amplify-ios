@@ -79,16 +79,6 @@ class AWSMobileClientAdapter: AWSMobileClientBehavior {
                                         completionHandler: completionHandler)
     }
 
-    func showSignIn(navigationController: UINavigationController,
-                    signInUIOptions: SignInUIOptions,
-                    hostedUIOptions: HostedUIOptions?,
-                    _ completionHandler: @escaping (UserState?, Error?) -> Void) {
-        awsMobileClient.showSignIn(navigationController: navigationController,
-                                   signInUIOptions: signInUIOptions,
-                                   hostedUIOptions: hostedUIOptions,
-                                   completionHandler)
-    }
-
     func confirmSignIn(challengeResponse: String,
                        userAttributes: [String: String] = [:],
                        clientMetaData: [String: String] = [:],

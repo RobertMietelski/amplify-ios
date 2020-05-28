@@ -13,10 +13,10 @@ public protocol APICategoryReachabilityBehavior {
     /// - Parameters:
     ///   - for: The corresponding apiName that maps to the plugin configuration
     /// - Returns: A publisher that receives reachability updates, or nil if the reachability subsystem is unavailable
-    @available(iOS 13.0, *)
+    @available(tvOS 13.0, *)
     func reachabilityPublisher(for apiName: String?) throws -> AnyPublisher<ReachabilityUpdate, Never>?
 
-    @available(iOS 13.0, *)
+    @available(tvOS 13.0, *)
     func reachabilityPublisher() throws -> AnyPublisher<ReachabilityUpdate, Never>?
 
 }

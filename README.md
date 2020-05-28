@@ -55,12 +55,15 @@ Amplify requires Xcode 11 or higher to build.
         use_frameworks!
         
         target :'YourTarget' do
-            pod 'Amplify'
-            pod 'AmplifyPlugins'
-            pod 'AWSPluginsCore'
-            pod 'AWSPredictionsPlugin'
-            pod 'CoreMLPredictionsPlugin'
-            pod 'AWSMobileClient'
+            AWS_SDK_SOURCE = 'https://github.com/RobertMietelski/aws-sdk-tvos.git'
+            AMPLIFY_SOURCE = 'https://github.com/RobertMietelski/amplify-tvos.git'
+        
+            pod 'Amplify', :git => AMPLIFY_SOURCE
+            pod 'AmplifyPlugins', :git => AMPLIFY_SOURCE
+            pod 'AWSPluginsCore', :git => AMPLIFY_SOURCE
+            pod 'AWSPredictionsPlugin', :git => AMPLIFY_SOURCE
+            pod 'CoreMLPredictionsPlugin', :git => AMPLIFY_SOURCE
+            pod 'AWSMobileClient', :git => AWS_SDK_SOURCE
         end
         
 3. Then run the following command:
