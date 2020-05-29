@@ -23,36 +23,35 @@ Pod::Spec.new do |s|
   s.swift_version = '5.0'
 
   AWS_SDK_VERSION = '~> 2.13.4'
-  AMPLIFY_VERSION = '1.0.0'
 
   s.subspec 'AWSAPIPlugin' do |ss|
     ss.source_files = 'AmplifyPlugins/API/AWSAPICategoryPlugin/**/*.swift'
-    ss.dependency 'AWSPluginsCore', AMPLIFY_VERSION
+    ss.dependency 'AWSPluginsCore', :path => '../'
     ss.dependency 'ReachabilitySwift', '~> 5.0.0'
     ss.dependency 'AppSyncRealTimeClient', "~> 1.1.0"
   end
 
   s.subspec 'AWSCognitoAuthPlugin' do |ss|
     ss.source_files = 'AmplifyPlugins/Auth/AWSCognitoAuthPlugin/**/*.swift'
-    ss.dependency 'AWSPluginsCore', AMPLIFY_VERSION
+    ss.dependency 'AWSPluginsCore', :path => '../'
     ss.dependency 'AWSMobileClient', AWS_SDK_VERSION
   end
 
   s.subspec 'AWSDataStorePlugin' do |ss|
     ss.source_files = 'AmplifyPlugins/DataStore/AWSDataStoreCategoryPlugin/**/*.swift'
-    ss.dependency 'AWSPluginsCore', AMPLIFY_VERSION
+    ss.dependency 'AWSPluginsCore', :path => '../'
     ss.dependency 'SQLite.swift', '~> 0.12.0'
   end
 
   s.subspec 'AWSPinpointAnalyticsPlugin' do |ss|
     ss.source_files = 'AmplifyPlugins/Analytics/AWSPinpointAnalyticsPlugin/**/*.swift'
     ss.dependency 'AWSPinpoint', AWS_SDK_VERSION
-    ss.dependency 'AWSPluginsCore', AMPLIFY_VERSION
+    ss.dependency 'AWSPluginsCore', :path => '../'
   end
 
   s.subspec 'AWSS3StoragePlugin' do |ss|
     ss.source_files = 'AmplifyPlugins/Storage/AWSS3StoragePlugin/**/*.swift'
-    ss.dependency 'AWSPluginsCore', AMPLIFY_VERSION
+    ss.dependency 'AWSPluginsCore', :path => '../'
     ss.dependency 'AWSS3', AWS_SDK_VERSION
   end
 

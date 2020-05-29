@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.author       = { 'Amazon Web Services' => 'amazonwebservices' }
   s.source       = { :git => 'https://github.com/RobertMietelski/amplify-tvos.git', :tag => s.version}
 
-  s.tvos.deployment_target = '11.0'
+  s.tvos.deployment_target = '12.0'
   s.swift_version = '5.0'
 
   AWS_SDK_VERSION = "~> 2.13.4"

@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'AWSPluginsTestCommon' do |ss|
     ss.source_files = 'AmplifyPlugins/Core/AWSPluginsTestCommon/**/*.swift'
-    ss.dependency 'AWSPluginsCore', '1.0.0'
+    ss.dependency 'AWSPluginsCore', :path => '../'
     ss.dependency 'AWSCore'
   end
 
