@@ -15,16 +15,17 @@ Pod::Spec.new do |s|
   s.swift_version = '5.0'
 
   AWS_SDK_VERSION = '~> 2.13.4'
-
+  AMPLIFY_VERSION = :git => 'https://github.com/RobertMietelski/amplify-tvos.git'
+  
   s.source_files = 'AmplifyPlugins/Predictions/AWSPredictionsPlugin/**/*.swift'
 
   s.dependency 'AWSComprehend', AWS_SDK_VERSION
-  s.dependency 'AWSPluginsCore', :path => '../'
+  s.dependency 'AWSPluginsCore', AMPLIFY_VERSION
   s.dependency 'AWSPolly', AWS_SDK_VERSION
   s.dependency 'AWSRekognition', AWS_SDK_VERSION
   s.dependency 'AWSTextract', AWS_SDK_VERSION
   s.dependency 'AWSTranscribeStreaming', AWS_SDK_VERSION
   s.dependency 'AWSTranslate', AWS_SDK_VERSION
-  s.dependency 'CoreMLPredictionsPlugin', :path => '../'
+  s.dependency 'CoreMLPredictionsPlugin', AMPLIFY_VERSION
 
 end

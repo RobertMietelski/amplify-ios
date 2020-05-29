@@ -26,9 +26,11 @@ Pod::Spec.new do |s|
 
   s.dependency 'Amplify', '1.0.0'
 
+  AMPLIFY_VERSION = :git => 'https://github.com/RobertMietelski/amplify-tvos.git'
+
   s.subspec 'AWSPluginsTestCommon' do |ss|
     ss.source_files = 'AmplifyPlugins/Core/AWSPluginsTestCommon/**/*.swift'
-    ss.dependency 'AWSPluginsCore', :path => '../'
+    ss.dependency 'AWSPluginsCore', AMPLIFY_VERSION
     ss.dependency 'AWSCore'
   end
 
