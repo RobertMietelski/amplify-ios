@@ -1,6 +1,6 @@
 #!/bin/bash
 
-find . -name "*.podspec" -exec sed -i '' 's/s.platform     = :ios,/s.tvos.deployment_target =/g' {} +
+find . -name "*.podspec" -exec sed -i '' 's/s.platform = :ios,/s.tvos.deployment_target =/g' {} +
 
 find . -name "*.podspec" -exec sed -i '' 's/aws-amplify/RobertMietelski/g' {} +
 
