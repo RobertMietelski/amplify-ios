@@ -24,6 +24,7 @@ public protocol AuthCategoryBehavior: AuthCategoryUserBehavior, AuthCategoryDevi
     ///   - password: password as per the password policy of the provider
     ///   - options: Parameters specific to plugin behavior
     ///   - listener: Triggered when the operation completes.
+    @discardableResult
     func signUp(username: String,
                 password: String?,
                 options: AuthSignUpOperation.Request.Options?,
@@ -39,6 +40,7 @@ public protocol AuthCategoryBehavior: AuthCategoryUserBehavior, AuthCategoryDevi
     ///   - confirmationCode: Confirmation code received to the user.
     ///   - options: Parameters specific to plugin behavior
     ///   - listener: Triggered when the operation completes.
+    @discardableResult
     func confirmSignUp(for username: String,
                        confirmationCode: String,
                        options: AuthConfirmSignUpOperation.Request.Options?,
@@ -50,6 +52,7 @@ public protocol AuthCategoryBehavior: AuthCategoryUserBehavior, AuthCategoryDevi
     ///   - username: Username of the user to be confirmed.
     ///   - options: Parameters specific to plugin behavior.
     ///   - listener: Triggered when the operation completes.
+    @discardableResult
     func resendSignUpCode(for username: String,
                           options: AuthResendSignUpCodeOperation.Request.Options?,
                           listener: AuthResendSignUpCodeOperation.ResultListener?) -> AuthResendSignUpCodeOperation
@@ -64,6 +67,7 @@ public protocol AuthCategoryBehavior: AuthCategoryUserBehavior, AuthCategoryDevi
     ///   - password: Password to signIn the user
     ///   - options: Parameters specific to plugin behavior
     ///   - listener: Triggered when the operation completes.
+    @discardableResult
     func signIn(username: String?,
                 password: String?,
                 options: AuthSignInOperation.Request.Options?,
@@ -75,10 +79,12 @@ public protocol AuthCategoryBehavior: AuthCategoryUserBehavior, AuthCategoryDevi
     ///   - challengeResponse: Challenge response required to confirm the next step in signIn flow
     ///   - options: Parameters specific to plugin behavior.
     ///   - listener: Triggered when the operation completes.
+    @discardableResult
     func confirmSignIn(challengeResponse: String,
                        options: AuthConfirmSignInOperation.Request.Options?,
                        listener: AuthConfirmSignInOperation.ResultListener?) -> AuthConfirmSignInOperation
 
+    @discardableResult
     func signOut(options: AuthSignOutOperation.Request.Options?,
                  listener: AuthSignOutOperation.ResultListener?) -> AuthSignOutOperation
 
@@ -87,6 +93,7 @@ public protocol AuthCategoryBehavior: AuthCategoryUserBehavior, AuthCategoryDevi
     /// - Parameters:
     ///   - options: Parameters specific to plugin behavior
     ///   - listener: Triggered when the operation completes.
+    @discardableResult
     func fetchAuthSession(options: AuthFetchSessionOperation.Request.Options?,
                           listener: AuthFetchSessionOperation.ResultListener?) -> AuthFetchSessionOperation
 
@@ -96,6 +103,7 @@ public protocol AuthCategoryBehavior: AuthCategoryUserBehavior, AuthCategoryDevi
     ///   - username: username whose password need to reset
     ///   - options: Parameters specific to plugin behavior
     ///   - listener: Triggered when the operation completes
+    @discardableResult
     func resetPassword(for username: String,
                        options: AuthResetPasswordOperation.Request.Options?,
                        listener: AuthResetPasswordOperation.ResultListener?) -> AuthResetPasswordOperation
@@ -108,6 +116,7 @@ public protocol AuthCategoryBehavior: AuthCategoryUserBehavior, AuthCategoryDevi
     ///   - confirmationCode: Received confirmation code
     ///   - options: Parameters specific to plugin behavior
     ///   - listener: Triggered when the operation completes
+    @discardableResult
     func confirmResetPassword(for username: String,
                               with newPassword: String,
                               confirmationCode: String,
